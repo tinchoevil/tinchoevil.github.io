@@ -8,201 +8,229 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ============ RIEL LATERAL / ÍNDICE ============ -->
-<nav class="rail" id="rail">
-  <div class="rail-brand">RPZ</div>
-  <button class="rail-toggle" id="railToggle" aria-expanded="false" aria-controls="railNav">MENÚ</button>
-  <div class="rail-nav" id="railNav">
-    <a class="rail-link" data-group="dev" href="#inicio"><span class="code">D00</span><span class="label">Inicio</span></a>
-    <a class="rail-link" data-group="dev" href="#sobre-mi"><span class="code">D01</span><span class="label">Sobre mí</span></a>
-    <a class="rail-link" data-group="dev" href="#proyectos"><span class="code">D02</span><span class="label">Proyectos</span></a>
-    <a class="rail-link" data-group="edu" href="#docencia"><span class="code">E01</span><span class="label">Docencia</span></a>
-    <a class="rail-link" data-group="dev" href="#habilidades"><span class="code">D03</span><span class="label">Habilidades</span></a>
-    <a class="rail-link" data-group="edu" href="#formacion"><span class="code">E02</span><span class="label">Formación</span></a>
-    <a class="rail-link" data-group="dev" href="#contacto"><span class="code">D04</span><span class="label">Contacto</span></a>
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="sb-top">
+      <div class="sb-avatar">
+        <img src="assets/img/perfil.jpg" alt="Foto de perfil de Rodolfo Peñaranda Zamora">
+      </div>
+      <h1 class="sb-name">Rodolfo Martín<br>Peñaranda Zamora</h1>
+      <p class="sb-role">Ingeniero de Sistemas — Desarrollador &amp; Docente</p>
+
+      <button class="sb-toggle" id="sbToggle" aria-expanded="false">
+        Mostrar contacto <i class="bx bx-chevron-down"></i>
+      </button>
+    </div>
+
+    <div class="sb-details" id="sbDetails">
+      <div class="sb-item">
+        <i class="bx bx-envelope"></i>
+        <div class="sb-item-text">
+          <span class="sb-item-label">Email</span>
+          <span class="sb-item-value"><a href="mailto:tinchoevil@gmail.com">tinchoevil@gmail.com</a></span>
+        </div>
+      </div>
+      <div class="sb-item">
+        <i class="bx bxl-linkedin-square"></i>
+        <div class="sb-item-text">
+          <span class="sb-item-label">LinkedIn</span>
+          <span class="sb-item-value"><a href="https://www.linkedin.com/in/rodolfo-pe%C3%B1aranda-a621821b1/" target="_blank" rel="noopener">rodolfo-peñaranda</a></span>
+        </div>
+      </div>
+      <div class="sb-item">
+        <i class="bx bxl-github"></i>
+        <div class="sb-item-text">
+          <span class="sb-item-label">GitHub</span>
+          <span class="sb-item-value"><a href="https://github.com/tinchoevil" target="_blank" rel="noopener">tinchoevil</a></span>
+        </div>
+      </div>
+      <div class="sb-item">
+        <i class="bx bx-briefcase"></i>
+        <div class="sb-item-text">
+          <span class="sb-item-label">Docencia actual</span>
+          <span class="sb-item-value">Universidad Privada Domingo Savio (UPDS)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-socials" id="sbSocials">
+      <a href="https://github.com/tinchoevil" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      <a href="https://www.linkedin.com/in/rodolfo-pe%C3%B1aranda-a621821b1/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      <a href="mailto:tinchoevil@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+    </div>
+  </aside>
+
+  <!-- ============ CONTENIDO ============ -->
+  <div class="content">
+
+    <nav class="navbar">
+      <button class="nav-btn active" data-page="about">Sobre mí</button>
+      <button class="nav-btn" data-page="resume">Currículum</button>
+      <button class="nav-btn" data-page="portfolio">Proyectos</button>
+      <button class="nav-btn" data-page="contact">Contacto</button>
+    </nav>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="page active" id="about">
+      <div class="article-head">
+        <span class="eyebrow">Presentación</span>
+        <h2>Donde el código y el aula se cruzan</h2>
+      </div>
+
+      <div class="card about-text">
+        <p>Soy profesional del área de <strong>Sistemas Informáticos</strong>, con experiencia en docencia y formación tecnológica desde el año 2009, desarrollando actividades académicas en diferentes instituciones y contextos educativos. A lo largo de mi trayectoria he impartido formación en programación, desarrollo de software, diseño y desarrollo web, bases de datos, hardware y tecnologías educativas.</p>
+        <p>Actualmente ejerzo la docencia en la <strong>Universidad Privada Domingo Savio (UPDS)</strong>, y cuento con experiencia en el uso, implementación y administración de plataformas educativas y entornos virtuales de aprendizaje en el ámbito de la educación superior.</p>
+        <p>En los últimos años he incorporado de forma constante herramientas de <strong>Inteligencia Artificial Generativa</strong> a mi práctica profesional y educativa: creación y adaptación de contenidos, planificación, generación de recursos didácticos, apoyo a la evaluación y automatización de tareas. Creo que la IA complementa la labor docente sin reemplazar el criterio, la creatividad y la experiencia de quien enseña.</p>
+      </div>
+
+      <div class="services">
+        <div class="service-card">
+          <div class="service-icon"><i class='bx bx-code-alt'></i></div>
+          <h4>Desarrollo de software</h4>
+          <p>Aplicaciones web full-stack, desde el diseño de base de datos hasta la interfaz de usuario.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class='bx bx-chalkboard'></i></div>
+          <h4>Docencia tecnológica</h4>
+          <p>Formación en programación, bases de datos, desarrollo web y hardware desde 2009.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class='bx bx-bulb'></i></div>
+          <h4>IA aplicada a la educación</h4>
+          <p>Integración crítica y responsable de IA generativa en la planificación y creación de recursos docentes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class='bx bx-server'></i></div>
+          <h4>Plataformas educativas</h4>
+          <p>Implementación y administración de entornos virtuales de aprendizaje en educación superior.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CURRÍCULUM ============ -->
+    <section class="page" id="resume">
+      <div class="article-head">
+        <span class="eyebrow">Trayectoria</span>
+        <h2>Currículum</h2>
+      </div>
+
+      <div class="card resume-block">
+        <div class="resume-title"><i class='bx bx-graduation'></i> Formación académica</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <h4>Ingeniero de Sistemas</h4>
+          </div>
+          <div class="tl-item">
+            <h4>Diplomado en Educación Superior</h4>
+          </div>
+          <div class="tl-item">
+            <h4>Diplomado en DevOps</h4>
+          </div>
+          <div class="tl-item">
+            <h4>Formación en Inteligencia Artificial</h4>
+            <p>Aplicada a la educación y la productividad profesional.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card resume-block">
+        <div class="resume-title"><i class='bx bx-briefcase'></i> Experiencia docente</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <h4>Docente universitario</h4>
+            <span class="tl-meta">Universidad Privada Domingo Savio (UPDS) · Actualidad</span>
+            <p>Formación en programación, desarrollo de software, diseño y desarrollo web, bases de datos, hardware y tecnologías educativas.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Formación tecnológica continua</h4>
+            <span class="tl-meta">Distintas instituciones · Desde 2009</span>
+            <p>Más de una década impartiendo formación en áreas relacionadas con la informática.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Entornos virtuales de aprendizaje</h4>
+            <span class="tl-meta">Educación superior</span>
+            <p>Uso, implementación y administración de plataformas educativas y EVA.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Taller: IA aplicada a la docencia</h4>
+            <span class="tl-meta">Formación para docentes</span>
+            <p>Herramientas, estrategias y ejemplos de IA generativa para planificación, creación de contenidos y evaluación.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card resume-block">
+        <div class="resume-title"><i class='bx bx-terminal'></i> Habilidades técnicas</div>
+        <div class="skills-grid" id="skillsGrid"></div>
+        <div class="stack-chips">
+          <span class="stack-chip">Stack MEVN</span>
+          <span class="stack-chip">Stack MERN</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="page" id="portfolio">
+      <div class="article-head">
+        <span class="eyebrow">Trabajo realizado</span>
+        <h2>Proyectos</h2>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="propio">Desarrollo propio</button>
+        <button class="filter-btn" data-filter="colaboracion">Colaboración</button>
+        <button class="filter-btn" data-filter="personal">Personal</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="page" id="contact">
+      <div class="article-head">
+        <span class="eyebrow">Hablemos</span>
+        <h2>Contacto</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class='bx bx-envelope'></i>
+          <span class="label">EMAIL</span>
+          <span class="value">tinchoevil@gmail.com</span>
+        </div>
+        <div class="contact-card">
+          <i class='bx bxl-linkedin-square'></i>
+          <span class="label">LINKEDIN</span>
+          <span class="value">rodolfo-peñaranda</span>
+        </div>
+        <div class="contact-card">
+          <i class='bx bxl-github'></i>
+          <span class="label">GITHUB</span>
+          <span class="value">tinchoevil</span>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <h3>¿Conversamos?</h3>
+        <p>Disponible para colaborar en desarrollo de software, o para hablar sobre formación tecnológica y capacitación en IA para equipos docentes.</p>
+        <a class="btn-solid" href="mailto:tinchoevil@gmail.com">
+          <i class='bx bx-send'></i> Enviar un correo
+        </a>
+      </div>
+    </section>
+
+    <p class="foot">© <span id="year"></span> Rodolfo Martín Peñaranda Zamora — publicado con GitHub Pages.</p>
   </div>
-  <div class="rail-foot">
-    <a href="https://github.com/tinchoevil" target="_blank" rel="noopener">GH</a>
-    <a href="https://www.linkedin.com/in/rodolfo-pe%C3%B1aranda-a621821b1/" target="_blank" rel="noopener">IN</a>
-  </div>
-</nav>
-
-<main class="main">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="inicio">
-    <div>
-      <div class="hero-terminal" id="heroTerminal" aria-hidden="true"></div>
-      <h1 class="hero-name">Rodolfo Martín<br>Peñaranda Zamora</h1>
-      <p class="hero-role">Ingeniero de Sistemas — Desarrollador &amp; Docente</p>
-      <p class="hero-lede">Diseño y construyo software, y desde 2009 formo a otros para que también sepan hacerlo. Dos oficios, una misma lógica: entender el problema antes de escribir la solución.</p>
-      <div class="hero-links">
-        <a class="pill solid" href="#proyectos">Ver proyectos</a>
-        <a class="pill" href="#contacto">Contactar</a>
-        <a class="pill" href="https://www.linkedin.com/in/rodolfo-pe%C3%B1aranda-a621821b1/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-    <div class="hero-seal">
-      <div class="hero-seal-ring" aria-hidden="true"></div>
-      <img src="assets/img/perfil.jpg" alt="Foto de perfil de Rodolfo Peñaranda Zamora" id="heroPhoto">
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============ SOBRE MÍ ============ -->
-  <section class="about reveal" id="sobre-mi">
-    <div>
-      <span class="eyebrow">D01 — Sobre mí</span>
-      <h2>Donde el código y el aula se cruzan</h2>
-      <p>Soy profesional del área de <strong>Sistemas Informáticos</strong>, con experiencia en docencia y formación tecnológica desde el año 2009, desarrollando actividades académicas en diferentes instituciones y contextos educativos. A lo largo de mi trayectoria he impartido formación en programación, desarrollo de software, diseño y desarrollo web, bases de datos, hardware y tecnologías educativas.</p>
-      <p>Actualmente ejerzo la docencia en la <strong>Universidad Privada Domingo Savio (UPDS)</strong>, y cuento con experiencia en el uso, implementación y administración de plataformas educativas y entornos virtuales de aprendizaje en el ámbito de la educación superior.</p>
-      <p>En los últimos años he incorporado de forma constante herramientas de <strong>Inteligencia Artificial Generativa</strong> a mi práctica profesional y educativa: creación y adaptación de contenidos, planificación, generación de recursos didácticos, apoyo a la evaluación y automatización de tareas. Creo que la IA complementa la labor docente sin reemplazar el criterio, la creatividad y la experiencia de quien enseña — y esa es la mirada con la que la aplico, tanto al programar como al enseñar a programar.</p>
-    </div>
-    <aside class="marginalia">
-      <div class="stat"><b>2009</b><span>DOCENTE DESDE</span></div>
-      <div class="stat"><b>6+</b><span>SISTEMAS DESARROLLADOS</span></div>
-      <div class="stat"><b>UPDS</b><span>DOCENCIA ACTUAL</span></div>
-    </aside>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============ PROYECTOS ============ -->
-  <section class="log reveal" id="proyectos">
-    <span class="eyebrow">D02 — Bitácora de proyectos</span>
-    <h2>Proyectos</h2>
-    <p class="section-sub">Sistemas propios y colaboraciones. Toca cada entrada para ver el detalle.</p>
-
-    <div class="entries" id="entries">
-      <!-- generado por JS a partir de un arreglo de datos -->
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============ DOCENCIA ============ -->
-  <section class="catalog reveal" id="docencia">
-    <span class="eyebrow">E01 — Catálogo de formación impartida</span>
-    <h2>Docencia</h2>
-
-    <div class="course">
-      <span class="code">EDU-01</span>
-      <div>
-        <h3>Docente universitario</h3>
-        <span class="meta">Universidad Privada Domingo Savio (UPDS) · Actualidad</span>
-        <p>Formación en programación, desarrollo de software, diseño y desarrollo web, bases de datos, hardware y tecnologías educativas.</p>
-      </div>
-    </div>
-
-    <div class="course">
-      <span class="code">EDU-02</span>
-      <div>
-        <h3>Formación tecnológica continua</h3>
-        <span class="meta">Distintas instituciones · Desde 2009</span>
-        <p>Más de una década impartiendo formación en áreas relacionadas con la informática, adaptando contenidos a distintos contextos y niveles educativos.</p>
-      </div>
-    </div>
-
-    <div class="course">
-      <span class="code">EDU-03</span>
-      <div>
-        <h3>Entornos virtuales de aprendizaje</h3>
-        <span class="meta">Educación superior</span>
-        <p>Uso, implementación y administración de plataformas educativas y EVA en instituciones de educación superior.</p>
-      </div>
-    </div>
-
-    <div class="course">
-      <span class="code">EDU-04</span>
-      <div>
-        <h3>Taller: IA aplicada a la docencia</h3>
-        <span class="meta">Formación para docentes</span>
-        <p>Visión práctica de las posibilidades de la Inteligencia Artificial Generativa en la actividad académica: planificación, creación de contenidos, apoyo a la evaluación y automatización de tareas, con un uso responsable, crítico y eficiente.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============ HABILIDADES ============ -->
-  <section class="stack reveal" id="habilidades">
-    <span class="eyebrow">D03 — Stack técnico</span>
-    <h2>Habilidades</h2>
-
-    <div class="stack-grid">
-      <div class="stack-row">
-        <span class="label">FRONTEND</span>
-        <div class="chips">
-          <span class="chip">HTML</span>
-          <span class="chip">CSS</span>
-          <span class="chip highlight">JavaScript</span>
-          <span class="chip">React</span>
-          <span class="chip">Vue</span>
-          <span class="chip">Bootstrap</span>
-          <span class="chip">Tailwind CSS</span>
-        </div>
-      </div>
-      <div class="stack-row">
-        <span class="label">BACKEND</span>
-        <div class="chips">
-          <span class="chip highlight">Node / Express</span>
-          <span class="chip">C#</span>
-          <span class="chip">Python</span>
-        </div>
-      </div>
-      <div class="stack-row">
-        <span class="label">BASES DE DATOS</span>
-        <div class="chips">
-          <span class="chip">MySQL</span>
-          <span class="chip">PostgreSQL</span>
-        </div>
-      </div>
-      <div class="stack-row">
-        <span class="label">STACKS COMPLETOS</span>
-        <div class="chips">
-          <span class="chip highlight-gold">MEVN</span>
-          <span class="chip highlight-gold">MERN</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="section-divider">
-
-  <!-- ============ FORMACIÓN ============ -->
-  <section class="education reveal" id="formacion">
-    <span class="eyebrow">E02 — Formación académica</span>
-    <h2>Formación</h2>
-    <ul class="edu-list">
-      <li><b>Ingeniero de Sistemas</b></li>
-      <li><b>Diplomado en Educación Superior</b></li>
-      <li><b>Diplomado en DevOps</b></li>
-      <li><b>Formación en Inteligencia Artificial</b> aplicada a la educación y la productividad</li>
-    </ul>
-  </section>
-
-  <!-- ============ CONTACTO ============ -->
-  <section class="signature reveal" id="contacto">
-    <span class="eyebrow">D04 — Contacto</span>
-    <h2>Conversemos sobre tu próximo proyecto o curso</h2>
-    <p>Disponible para colaborar en desarrollo de software, o para conversar sobre formación tecnológica y capacitación en IA para equipos docentes.</p>
-    <div class="hero-links">
-      <a class="pill solid" href="mailto:tinchoevil@gmail.com">tinchoevil@gmail.com</a>
-      <a class="pill" href="https://www.linkedin.com/in/rodolfo-pe%C3%B1aranda-a621821b1/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="pill" href="https://github.com/tinchoevil" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </section>
-
-  <footer class="foot">
-    © <span id="year"></span> Rodolfo Martín Peñaranda Zamora — construido con HTML, CSS y JS puro, publicado en GitHub Pages.
-  </footer>
-</main>
+</div>
 
 <script src="js/main.js"></script>
 </body>

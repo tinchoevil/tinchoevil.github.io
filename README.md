@@ -1,61 +1,44 @@
 # Portafolio — Rodolfo Peñaranda Zamora
 
-Sitio estático (HTML + CSS + JS puro, sin frameworks ni build) listo para publicarse en GitHub Pages.
+Sitio estático (HTML + CSS + JS puro) con estructura tipo "vCard": sidebar fijo
+con datos de contacto + navegación por pestañas (Sobre mí / Currículum /
+Proyectos / Contacto). Usa la fuente de íconos Boxicons vía CDN.
 
-## 🚀 Cómo publicarlo en GitHub Pages
+## 🚀 Cómo actualizar lo ya publicado en `tinchoevil.github.io`
 
-1. Crea un repositorio en GitHub que se llame **exactamente**: `tinchoevil.github.io`
-   (debe coincidir con tu usuario de GitHub + `.github.io`)
-2. Sube todos los archivos de esta carpeta a la raíz de ese repositorio.
-   Puedes hacerlo desde la web de GitHub ("Add file → Upload files") o con Git:
+Ya tienes el repositorio conectado, así que solo necesitas reemplazar los
+archivos y subir de nuevo:
+
+1. Reemplaza el contenido de tu carpeta local (la que ya está conectada a
+   `tinchoevil.github.io`) con estos archivos: `index.html`, `css/style.css`,
+   `js/main.js`, `assets/img/perfil.jpg`, `README.md`.
+2. Desde la terminal, en esa carpeta:
    ```bash
-   git init
-   git add .
-   git commit -m "Primera versión del portafolio"
-   git branch -M main
-   git remote add origin https://github.com/tinchoevil/tinchoevil.github.io.git
-   git push -u origin main
+   git add -A
+   git commit -m "Rediseño: layout tipo vCard con sidebar y pestañas"
+   git push
    ```
-3. Ve a **Settings → Pages** en tu repositorio. Debería activarse automáticamente
-   porque el nombre del repo ya es especial. Si no, en "Build and deployment"
-   selecciona **Deploy from a branch**, rama `main`, carpeta `/root`.
-4. Espera 1-2 minutos. Tu sitio quedará publicado en:
-   **https://tinchoevil.github.io**
-
-## 📸 Foto de perfil
-
-Ya está integrada en `assets/img/perfil.jpg` (optimizada a ~38KB para carga rápida).
-Si quieres cambiarla más adelante, reemplaza ese archivo por otra imagen cuadrada
-(mínimo 400x400px) con el mismo nombre, o actualiza la ruta en el `<img>` dentro
-de `<section class="hero">` en `index.html`.
+3. Espera 1-2 minutos y recarga **https://tinchoevil.github.io** con
+   `Ctrl+Shift+R` (refresco forzado, para evitar la versión en caché).
 
 ## ✏️ Editar contenido
 
-- **Proyectos**: edita el arreglo `PROYECTOS` al inicio de `js/main.js`.
-  Cada objeto tiene `code`, `title`, `status`, `desc` y `tech` (arreglo de tags).
-  Te dejé tags genéricos en `tech` — te recomiendo poner ahí las tecnologías
-  reales que usaste en cada proyecto (ej: `"Node.js"`, `"MySQL"`, `"React"`).
-- **Docencia, habilidades, formación, contacto**: edita directamente el texto
-  dentro de `index.html`, en cada `<section>` (`#docencia`, `#habilidades`,
-  `#formacion`, `#contacto`).
-- **Colores y tipografía**: todo está centralizado en las variables `:root`
-  al inicio de `css/style.css`.
+- **Proyectos**: arreglo `PROYECTOS` en `js/main.js`. Cada uno tiene `title`,
+  `category` (`propio` / `colaboracion` / `personal`, controla el filtro),
+  `categoryLabel`, `desc` y `tags`.
+- **Habilidades**: arreglo `HABILIDADES` en `js/main.js`. Los porcentajes
+  (`level`) son orientativos — ajústalos a lo que realmente refleje tu nivel
+  en cada tecnología.
+- **Docencia, formación, sobre mí, contacto**: edita el texto directamente en
+  `index.html`, dentro de cada `<section class="page" id="...">`.
+- **Colores y tipografía**: variables `:root` al inicio de `css/style.css`.
 
 ## 🗂️ Estructura
 
 ```
-├── index.html          → contenido y estructura del sitio
-├── css/style.css        → todos los estilos (sistema de diseño con variables)
-├── js/main.js            → datos de proyectos + interactividad
-├── assets/img/           → imágenes (foto de perfil)
+├── index.html          → contenido y estructura
+├── css/style.css        → estilos (sistema de tokens con variables)
+├── js/main.js            → datos + interactividad (pestañas, filtro, menú)
+├── assets/img/perfil.jpg → foto de perfil
 └── README.md
 ```
-
-## 🎨 Sobre el diseño
-
-El sitio usa un concepto de "bitácora de código + libro de calificaciones":
-un riel lateral con códigos tipo materia (`DEV-01`, `EDU-01`...) funciona
-como índice de navegación, reflejando tu doble perfil de desarrollador y
-docente. Fondo oscuro tipo carbón-azulado, acentos dorado (diploma) y
-verde-azulado apagado (código), tipografía serif para títulos y monoespaciada
-para metadatos.
